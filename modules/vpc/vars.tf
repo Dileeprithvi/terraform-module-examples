@@ -1,7 +1,3 @@
-variable "region" {
-description = "AWS region for hosting our your network"
-}
-
 variable "vpc_cidr" {
 description = "VPC CIDR range"
 default = "10.0.0.0/26"
