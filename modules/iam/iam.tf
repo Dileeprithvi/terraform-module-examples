@@ -2,14 +2,14 @@ resource "aws_iam_role_policy" "ec2_policy" {
   name = "ec2_policy"
   role = aws_iam_role.ec2_s3_role.id
 
-  policy = file("${path.module}/ec2-policy.json")
+  policy = file("${path.module}/s3.json")
 
 }
 
 resource "aws_iam_role" "ec2_s3_role" {
   name = "ec2_s3_role"
 
-  assume_role_policy = file("${path.module}/s3.json")
+  assume_role_policy = file("${path.module}/ec2-role.json")
 
 }
 
