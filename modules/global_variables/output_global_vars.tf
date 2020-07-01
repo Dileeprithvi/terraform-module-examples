@@ -1,3 +1,3 @@
 output "aws_region" {
-  value = "us-west-2"
+  value = "us-east-1"
 }
