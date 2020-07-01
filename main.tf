@@ -34,5 +34,14 @@ source = ".//modules/ec2"
   
 mod_vpc_subs = module.my_vpc.subnets
 mod_vpc_pub_sg = module.my_vpc.sg_pub_id
-}
   
+# output logical name of aws_instance_profile from modules/iam/output.tf
+mod_iam_name = module.my_iam.aws_instance_profile  
+}
+
+  
+  
+module "my_iam"{
+source = ".//modules/iam"
+region = "us-east-1"
+}  
