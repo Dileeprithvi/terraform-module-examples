@@ -1,3 +1,5 @@
+# Below is the global variable mentioned for referencing the region
+
 module "global_variables" {
   source= ".//modules/global_variables"
 }
@@ -43,5 +45,4 @@ mod_iam_name = module.my_iam.aws_instance_profile
   
 module "my_iam"{
 source = ".//modules/iam"
-region = "us-east-1"
 }  
