@@ -12,10 +12,6 @@ description = "Key name for SSH into EC2"
 default = "awskey1"
 }
 
-
-variable "region" {
-}
-
 # value is given in the main.tf ( Two Public subnets values are fetched from the vpc module output )
 
 variable "mod_vpc_subs" {
