@@ -3,7 +3,7 @@
 resource "aws_security_group" "sg_public" {
   name = "sg_public"
   description = "Allowing Internet Access"
-  vpc_id = "${aws_vpc.terraform_vpc.id}"
+  vpc_id = aws_vpc.terraform_vpc.id
 
   tags = {
     Name = "sg_public_subnet"
@@ -37,7 +37,7 @@ resource "aws_security_group" "sg_public" {
 resource "aws_security_group" "sg_private" {
   name = "sg_private"
   description = "Restricted Access"
-  vpc_id = "${aws_vpc.terraform_vpc.id}"
+  vpc_id = aws_vpc.terraform_vpc.id
 
   tags = {
     Name = "sg_private_subnet"
