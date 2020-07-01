@@ -23,3 +23,7 @@ type = list(string)
 variable "mod_vpc_pub_sg" {
 }
 
+
+variable "mod_iam_name" {
+}  
+
