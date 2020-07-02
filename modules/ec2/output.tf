@@ -5,3 +5,8 @@ output "instance-1" {
 output "instance-2" {
   value = aws_instance.web-instance.1.id
 }
+
+output "web_instance" {
+  value = aws_instance.web-instance.*.id
+}
+
