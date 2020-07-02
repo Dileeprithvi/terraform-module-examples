@@ -45,4 +45,29 @@ mod_iam_name = module.my_iam.aws_instance_profile
   
 module "my_iam"{
 source = ".//modules/iam"
-}  
+} 
+  
+  
+module "my_alb"{
+source = ".//modules/alb"
+mod_vpc_sg_value = module.my_vpc.sg_pub_id
+mod_vpc_pub_subnet_value = module.my_vpc.subnets
+mod_vpc_id_value = module.my_vpc.vpc_id
+web_instances = module.my_ec2.web_instance
+}
+  
+
+module "my_route53"{
+source = ".//modules/route53"
+mod_alb_dns_name = module.my_alb.alb_dns_name
+mod_alb_zone_id = module.my_alb.alb_zone_id
+}
+  
+  
+  
+  
+
+  
+  
+  
+  
