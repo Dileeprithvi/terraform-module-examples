@@ -22,7 +22,7 @@ output "subnets_single" {
 # The below output describes vpc id
 
 output "vpc_id" {
-  value = [aws_vpc.terraform_vpc.id]
+  value = aws_vpc.terraform_vpc.id
 }
 
 # The below output describes Public subnet group
