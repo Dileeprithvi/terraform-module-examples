@@ -18,11 +18,16 @@ vpc_pub_az = ["us-east-1a","us-east-1b"]
 vpc_pri_az = ["us-east-1c","us-east-1d"]
 }
 
+#Below are the two outputs referenced to "modules/ec2/ec2.tf" in the data.terraform.remote_state!!! The output's value fetched from declaring the output in the module/vpc/output.tf
+
+# Below output will give two public subnets  
+  
 output "subnet1" {
   value = module.my_vpc.subnets
 }
 
-
+# Below output will give the public SG  
+  
 output "sg1" {
   value = module.my_vpc.sg_pub_id
 }
@@ -30,13 +35,7 @@ output "sg1" {
 
 module "my_ec2"{
 source = ".//modules/ec2"
-ec2_region = module.global_variables.aws_region   
-# Below values in the format!! - module.(logical name of the module vpc---> my_vpc).{referencing the output logical names of modules/vpc/output.tf}
-# my_vpc.subnets is a list(string) because the output contains two public subnet values
-  
-mod_vpc_subs = module.my_vpc.subnets
-mod_vpc_pub_sg = module.my_vpc.sg_pub_id
-  
+ec2_region = module.global_variables.aws_region     
 # output logical name of aws_instance_profile from modules/iam/output.tf
 mod_iam_name = module.my_iam.aws_instance_profile  
 }
