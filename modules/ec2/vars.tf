@@ -7,6 +7,9 @@ type = "map"
   }
 }
 
+variable "ec2_region" {
+}
+
 variable "instance_count" {
 default = "2"
 }
