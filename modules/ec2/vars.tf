@@ -19,18 +19,6 @@ description = "Key name for SSH into EC2"
 default = "awskey1"
 }
 
-# value is given in the main.tf ( Two Public subnets values are fetched from the vpc module output )
-
-variable "mod_vpc_subs" {
-type = list(string)
-}
-
-# value is given in the main.tf ( Public Security Group value are fetched from the vpc module output )
-
-variable "mod_vpc_pub_sg" {
-}
-
-
 variable "mod_iam_name" {
 }  
 
