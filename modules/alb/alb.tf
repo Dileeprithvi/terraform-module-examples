@@ -4,7 +4,8 @@ resource "aws_alb" "alb-internet" {
   load_balancer_type = var.loadbalancer
   security_groups    = var.mod_vpc_sg_value
   subnets            = var.mod_vpc_pub_subnet_value
-	    enable_deletion_protection = true
+#  enable_deletion_protection = true
+# Enabling enable_deletion_protection = true will not able to destroy the resources
 
   tags = {
     Environment = "trial"
