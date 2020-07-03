@@ -30,7 +30,7 @@ output "sg1" {
 
 module "my_ec2"{
 source = ".//modules/ec2"
-  
+ec2_region = module.global_variables.aws_region   
 # Below values in the format!! - module.(logical name of the module vpc---> my_vpc).{referencing the output logical names of modules/vpc/output.tf}
 # my_vpc.subnets is a list(string) because the output contains two public subnet values
   
