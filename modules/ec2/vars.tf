@@ -1,6 +1,6 @@
 variable "aws_ami" {
 description = "AWS region for hosting our your network"
-type = "map"
+type = map
     default = {
     us-east-1 = "ami-09d95fab7fff3776c"
     us-east-2 = "ami-06d5a8ce809b866ee"
