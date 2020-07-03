@@ -31,3 +31,9 @@ variable "mod_vpc_pub_sg" {
 variable "mod_iam_name" {
 }  
 
+variable "ec2_tags" {
+  default = {
+    Createdby               = "Dileep Prithvi"
+    Role                    = "DevOps"
+  }
+}
