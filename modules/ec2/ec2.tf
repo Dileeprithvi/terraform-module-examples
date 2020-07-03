@@ -10,7 +10,7 @@ iam_instance_profile = var.mod_iam_name
 user_data = file("${path.module}/httpd.sh")
 vpc_security_group_ids = var.mod_vpc_pub_sg
   tags = merge(
-    vars.ec2_tags,
+    var.ec2_tags,
   {
     Name = "web-instance-${count.index + 1}"
   },
