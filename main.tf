@@ -18,7 +18,7 @@ vpc_pub_az = ["us-east-1a","us-east-1b"]
 vpc_pri_az = ["us-east-1c","us-east-1d"]
 }
 
-#Below are the two outputs referenced to "modules/ec2/ec2.tf" in the data.terraform.remote_state!!! The output's value fetched from declaring the output in the module/vpc/output.tf
+#Below are the four outputs referenced to "modules/ec2/ec2.tf" in the data.terraform.remote_state!!! The output's value fetched from declaring the output in the module/vpc/output.tf
 
 # Below output will give two public subnets  
   
@@ -31,6 +31,18 @@ output "subnet1" {
 output "sg1" {
   value = module.my_vpc.sg_pub_id
 }
+  
+# Below output will give two private subnets  
+  
+output "subnet2" {
+  value = module.my_vpc.subnets2
+}
+
+# Below output will give the public SG  
+  
+output "sg2" {
+  value = module.my_vpc.sg_pri_id
+}  
 
 
 module "my_ec2"{
