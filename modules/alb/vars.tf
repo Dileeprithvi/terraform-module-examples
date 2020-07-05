@@ -28,7 +28,11 @@ description = "VPC ID fetched from the modules/vpc/vpc.tf (output) - mentioned i
 
 
 
-variable "web_instances" {
-description = "Creating the web instances in list format - taking two outputs of modules/ec2/ec2.tf"
-  type        = list(string)
+variable "web_instances-1" {
+description = "taking two outputs of modules/ec2/ec2.tf"
+}
+
+
+variable "web_instances-2" {
+description = "taking two outputs of modules/ec2/ec2.tf"
 }
