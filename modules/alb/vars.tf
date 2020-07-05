@@ -29,10 +29,10 @@ description = "VPC ID fetched from the modules/vpc/vpc.tf (output) - mentioned i
 
 
 variable "web_instances-1" {
-description = "taking two outputs of modules/ec2/ec2.tf"
+description = "taking output of modules/ec2/ec2.tf"
 }
 
 
 variable "web_instances-2" {
-description = "taking two outputs of modules/ec2/ec2.tf"
+description = "taking output of modules/ec2/ec2.tf"
 }
