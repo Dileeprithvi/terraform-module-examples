@@ -1,4 +1,4 @@
-# The below output describes all the two subnet ids without tuple form
+# The below output describes all the two public subnet ids without tuple form
 
 output "subnets" {
   value = aws_subnet.public.*.id
@@ -30,3 +30,20 @@ output "vpc_id" {
 output "sg_pub_id" {
   value = [aws_security_group.sg_public.id]
 }
+
+
+
+# The below output describes all the two private subnet ids without tuple form
+
+output "subnets" {
+  value = aws_subnet.private.*.id
+}
+
+# The below output describes Private subnet group
+
+output "sg_pri_id" {
+  value = [aws_security_group.sg_private.id]
+}
+
+
+
