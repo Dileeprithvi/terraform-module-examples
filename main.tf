@@ -64,7 +64,8 @@ source = ".//modules/alb"
 mod_vpc_sg_value = module.my_vpc.sg_pub_id
 mod_vpc_pub_subnet_value = module.my_vpc.subnets
 mod_vpc_id_value = module.my_vpc.vpc_id
-web_instances = module.my_ec2.web_instance
+web_instances-1 = module.my_ec2.web_instance-1
+web_instances-2 = module.my_ec2.web_instance-2
 }
   
 
