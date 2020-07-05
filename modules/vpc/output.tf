@@ -35,7 +35,7 @@ output "sg_pub_id" {
 
 # The below output describes all the two private subnet ids without tuple form
 
-output "subnets" {
+output "subnets2" {
   value = aws_subnet.private.*.id
 }
 
