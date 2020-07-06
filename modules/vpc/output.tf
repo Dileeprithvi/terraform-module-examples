@@ -45,5 +45,10 @@ output "sg_pri_id" {
   value = [aws_security_group.sg_private.id]
 }
 
+output "pri_route_id" {
+  value = aws_route_table.pri-route.id
+}
+
+
 
 
