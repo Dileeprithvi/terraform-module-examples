@@ -45,19 +45,27 @@ output "sg2" {
 }  
 
 
+/*  
+# Commenting this because we are using asg. if uncommented, make sure the modules/alb has relative changes according to ec2  
+  
 module "my_ec2"{
 source = ".//modules/ec2"
 ec2_region = module.global_variables.aws_region     
 # output logical name of aws_instance_profile from modules/iam/output.tf
 mod_iam_name = module.my_iam.aws_instance_profile  
 }
+  
+  
+*/  
 
   
   
 module "my_iam"{
 source = ".//modules/iam"
 } 
-  
+
+/*  
+# Uncomment if we are using the ec2 module 
   
 module "my_alb"{
 source = ".//modules/alb"
@@ -68,7 +76,18 @@ web_instances-1 = module.my_ec2.web_instance-1
 web_instances-2 = module.my_ec2.web_instance-2
 }
   
-
+*/ 
+  
+# the below my_alb used for asg
+  
+module "my_alb"{
+source = ".//modules/alb"
+mod_vpc_sg_value = module.my_vpc.sg_pub_id
+mod_vpc_pub_subnet_value = module.my_vpc.subnets
+mod_vpc_id_value = module.my_vpc.vpc_id
+}
+  
+  
 module "my_route53"{
 source = ".//modules/route53"
 mod_alb_dns_name = module.my_alb.alb_dns_name
@@ -85,7 +104,6 @@ pri_route_id = module.my_vpc.pri_route_id
 module "my_asg"{
 source = ".//modules/asg"
 get_vpc_sg = module.my_vpc.sg_pub_id
-get_elb_name = module.my_alb.alb_name
 get_pub_sub = module.my_vpc.subnets
 get_alb_getdevelop = module.my_alb.alb_target_develop
 get_alb_gettesting = module.my_alb.alb_target_testing
