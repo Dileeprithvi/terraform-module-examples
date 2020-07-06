@@ -6,3 +6,8 @@ output "alb_dns_name" {
 output "alb_zone_id" {
   value = aws_alb.alb-internet.zone_id
 }
+
+output "alb_name" {
+  value = aws_alb.alb-internet.name
+}
+
