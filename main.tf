@@ -82,7 +82,14 @@ pri_route_id = module.my_vpc.pri_route_id
 }  
   
   
-  
+module "my_asg"{
+source = ".//modules/asg"
+get_vpc_sg = module.my_vpc.sg_pub_id
+get_elb_name = module.my_alb.alb_name
+get_pub_sub = module.my_vpc.subnets
+get_alb_getdevelop = module.my_alb.alb_target_develop
+get_alb_gettesting = module.my_alb.alb_target_testing
+}  
   
 
   
