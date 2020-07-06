@@ -11,3 +11,6 @@ output "alb_name" {
   value = aws_alb.alb-internet.name
 }
 
+output "alb_target_develop" {
+  value = aws_alb_target_group.alb-web-target-group-1.name
+}
