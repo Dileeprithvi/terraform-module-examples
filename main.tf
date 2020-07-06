@@ -75,6 +75,12 @@ mod_alb_dns_name = module.my_alb.alb_dns_name
 mod_alb_zone_id = module.my_alb.alb_zone_id
 }
   
+module "my_vpc_endpoint"{
+source = ".//modules/s3-endpoint"
+vpc = module.my_vpc.vpc_id
+pri_route_id = module.my_vpc.pri_route_id
+}  
+  
   
   
   
