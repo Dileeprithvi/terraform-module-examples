@@ -110,7 +110,12 @@ get_alb_gettesting = module.my_alb.alb_target_testing
 mod_iam_name = module.my_iam.aws_instance_profile   
 }  
   
-
+# Creation of the two private ec2 instances!!!
+  
+module "my_ec2_private"{
+source = ".//modules/ec2_private"
+ec2_region = module.global_variables.aws_region       
+}
   
   
   
