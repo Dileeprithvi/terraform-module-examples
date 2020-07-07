@@ -23,3 +23,7 @@ variable "image" {
 description = "image id of the us-east-1 amazon ami"
 default = "ami-09d95fab7fff3776c"  
 }
+
+
+variable "mod_iam_name" {
+}  
