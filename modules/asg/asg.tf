@@ -16,7 +16,7 @@ echo "<h1>Terraform Web Instance Launched Successfully from Develop (Module Exam
 
 resource "aws_launch_configuration" "lc-develop" {
   name_prefix 				  = "lc-develop-"
-  image_id                    = "ami-09d95fab7fff3776c"
+  image_id                    = var.image
   instance_type               = "t2.micro"
   security_groups             = var.get_vpc_sg
 
@@ -71,7 +71,7 @@ echo "<h1>Terraform Web Instance Launched Successfully from Testing (Module Exam
 
 resource "aws_launch_configuration" "lc-testing" {
   name_prefix 				  = "lc-testing-"
-  image_id                    = "ami-09d95fab7fff3776c"
+  image_id                    = var.image
   instance_type               = "t2.micro"
   security_groups             = var.get_vpc_sg
   user_data_base64            = base64encode(local.userdata2)
