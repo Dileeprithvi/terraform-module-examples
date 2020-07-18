@@ -117,6 +117,18 @@ source = ".//modules/ec2_private"
 ec2_region = module.global_variables.aws_region       
 }
   
-  
+# Creation of the sftp server and CNAME record mapping to route53
+# Pre -req: In null resource, make sure aws cli is installed in the machine, because we are using those commands in null resource!!!!  
+
+module "my_sftp"{
+source = ".//modules/sftp"
+domain_name   = "sftp.dileeprithvi.tk"
+zone_id       = "Z05297701GTHYRW9ZMY4R"
+}
+
+output "record" {
+  value = module.my_sftp.record
+}
+
   
   
